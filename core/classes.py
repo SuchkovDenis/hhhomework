@@ -10,6 +10,7 @@ class Car:
     def __str__(self):
         return f"Машина: {self.mark} - {self.model}"
 
+
 class Garage:
     """
     Класс гаража Garage, у которого есть поле списка машин.
