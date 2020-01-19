@@ -5,6 +5,7 @@ class UnsupportedOperationError(Exception):
     pass
 
 
+@cache_decorator
 def calculator(a, b, operation):
     """
     Функция, производящая арифметическую операцию operation
@@ -66,11 +67,13 @@ def available_operation_input():
 
 
 if __name__ == '__main__':
-    number1 = safe_int_input()
-    number2 = safe_int_input()
-    op = available_operation_input()
+    while True:
+        number1 = safe_int_input()
+        number2 = safe_int_input()
+        op = available_operation_input()
 
-    try:
-        print('Результат: ', calculator(number1, number2, op))
-    except ZeroDivisionError:
-        print('Невозможно произвести вычисления: на 0 делить нельзя')
+        try:
+            print('Результат: ', calculator(number1, number2, op))
+        except ZeroDivisionError:
+            print('Невозможно произвести вычисления: на 0 делить нельзя')
+        print("-"*10)
